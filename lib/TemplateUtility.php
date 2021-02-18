@@ -145,9 +145,9 @@ class TemplateUtility
                 }
                 else
                 {
-                    echo '<a href="http://www.opencats.org" target="_blank">';
+                    echo '<a href="http://www.ysanta.com" target="_blank">';
                     echo '<img src="images/tabs/small_upgrade.jpg" border="0" /> ';
-                    echo 'OpenCATS.org</a>&nbsp;&nbsp;&nbsp;&nbsp;', "\n";
+                    echo 'ysanta.com</a>&nbsp;&nbsp;&nbsp;&nbsp;', "\n";
                 }
             }
 
