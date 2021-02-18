@@ -14,6 +14,7 @@ function checkAddForm(form)
 
     errorMessage += checkFirstName();
     errorMessage += checkLastName();
+    errorMessage += checkPhoneCell();
 
     if (errorMessage != '')
     {
@@ -31,6 +32,7 @@ function checkEditForm(form)
     errorMessage += checkFirstName();
     errorMessage += checkLastName();
     errorMessage += checkOwner();
+    errorMessage += checkPhoneCell();
 
     if (errorMessage != '')
     {
@@ -183,7 +185,25 @@ function checkOwner()
     if (fieldValue == '')
     {
         errorMessage = "    - You must select an owner.\n";
+        fieldLabel.style.color = '#ff0000';
+    }
+    else
+    {
+        fieldLabel.style.color = '#000';
+    }
 
+    return errorMessage;
+}
+
+function checkPhoneCell()
+{
+    var errorMessage = '';
+
+    fieldValue = document.getElementById('phoneCell').value;
+    fieldLabel = document.getElementById('phoneCellLabel');
+    if (fieldValue == '')
+    {
+        errorMessage = "    - You must enter a cell phone.\n";
         fieldLabel.style.color = '#ff0000';
     }
     else
