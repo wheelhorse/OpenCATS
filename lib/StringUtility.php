@@ -47,6 +47,10 @@ class StringUtility
     const matchPHNumber       = '\d{4}';                                /* PCRE */
     const matchPHENumber      = '(?P<number>\d{4})';                    /* PCRE */
 
+    const matchPHChina1      = '(?P<cnNumber1>\d{3})';                    /* PCRE */
+    const matchPHChina2      = '(?P<cnNumber2>\d{4})';                    /* PCRE */
+    const matchPHChina3      = '(?P<cnNumber3>\d{4})';                    /* PCRE */
+
     const matchPHExtension  = '([(]?(?:e?xt?(?:ension|)|#|[*]|)[)]?[\s\/.-]*\d{1,6}[)]?)?';                /* PCRE */
     const matchPHEExtension = '([(]?(?:e?xt?(?:ension|)|#|[*]|)[)]?[\s\/.-]*(?P<extension>\d{1,6})[)]?)?'; /* PCRE */
 
@@ -128,24 +132,24 @@ class StringUtility
     public static function extractPhoneNumber($string)
     {
         if (preg_match('/'
-            . self::matchPHECountryCode . self::matchPHSeparator . self::matchPHEAreaCode
-            . self::matchPHSeparator    . self::matchPHEExchange . self::matchPHSeparator
-            . self::matchPHENumber      . self::matchPHSeparator . self::matchPHEExtension
+            . self::matchPHECountryCode . self::matchPHSeparator . self::matchPHChina1
+            . self::matchPHSeparator    . self::matchPHChina2 . self::matchPHSeparator
+            . self::matchPHChina3      . self::matchPHSeparator . self::matchPHEExtension
             . '/i', $string, $matches))
         {
             //print_r($matches);
 
             /* Don't format international phone numbers. */
-            if (!empty($matches['countryCode']) && ($matches['countryCode'] != '1'))
+            if (!empty($matches['countryCode']))
             {
                 return $string;
             }
 
             $formattedPhoneNumber = sprintf(
                 "%s-%s-%s",
-                $matches['areaCode'],
-                $matches['exchange'],
-                $matches['number']
+                $matches['cnNumber1'],
+                $matches['cnNumber2'],
+                $matches['cnNumber3']
             );
 
             if (isset($matches['extension']) && !empty($matches['extension']))
