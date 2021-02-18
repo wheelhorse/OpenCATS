@@ -178,7 +178,8 @@ class FileUtility
         {
             if (ord($filename[$i]) >= 128 || ord($filename[$i]) < 32)
             {
-                $filename[$i] = '_';
+                /* $filename[$i] = '_'; */
+                $filename[$i] = chr((ord($filename[$i]) % 25) + 65);
             }
         }
 
