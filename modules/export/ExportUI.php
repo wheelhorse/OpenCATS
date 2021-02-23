@@ -55,6 +55,7 @@ class ExportUI extends UserInterface
     {
         $action = $this->getAction();
 
+        /* comment out to disable export data
         switch ($action)
         {
             case 'exportByDataGrid':
@@ -66,6 +67,7 @@ class ExportUI extends UserInterface
                 $this->onExport();
                 break;
         }
+         */
     }
 
 
