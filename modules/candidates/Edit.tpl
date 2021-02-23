@@ -34,28 +34,19 @@
                     
                     <tr>
                         <td class="tdVertical">
-                            <label id="firstNameLabel" for="firstName">First Name:</label>
-                        </td>
-                        <td class="tdData">
-                            <input type="text" class="inputbox" id="firstName" name="firstName" value="<?php $this->_($this->data['firstName']); ?>" style="width: 150px;" />
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="tdVertical">
-                            <label id="middleNameLabel" for="middleName">Middle Name:</label>
-                        </td>
-                        <td class="tdData">
-                            <input type="text" class="inputbox" id="middleName" name="middleName" value="<?php $this->_($this->data['middleName']); ?>" style="width: 150px;" />
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="tdVertical">
                             <label id="lastNameLabel" for="lastName">Last Name:</label>
                         </td>
                         <td class="tdData">
                             <input type="text" class="inputbox" id="lastName" name="lastName" value="<?php $this->_($this->data['lastName']); ?>" style="width: 150px;" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="tdVertical">
+                            <label id="firstNameLabel" for="firstName">First Name:</label>
+                        </td>
+                        <td class="tdData">
+                            <input type="text" class="inputbox" id="firstName" name="firstName" value="<?php $this->_($this->data['firstName']); ?>" style="width: 150px;" />
                         </td>
                     </tr>
 
