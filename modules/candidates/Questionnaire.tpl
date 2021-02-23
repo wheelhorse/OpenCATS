@@ -1,5 +1,5 @@
 <?php /* $Id: Questionnaire.tpl 3668 2007-11-21 00:38:50Z brian $ */ ?>
-<?php TemplateUtility::printHeader('Candidate - '.$this->cData['firstName'].' '.$this->cData['lastName'] . ' Questionnaire', array( 'js/activity.js', 'js/sorttable.js', 'js/match.js', 'js/lib.js', 'js/pipeline.js', 'js/attachment.js')); ?>
+<?php TemplateUtility::printHeader('Candidate - '.$this->cData['lastName'].' '.$this->cData['firstName'] . ' Questionnaire', array( 'js/activity.js', 'js/sorttable.js', 'js/match.js', 'js/lib.js', 'js/pipeline.js', 'js/attachment.js')); ?>
 <?php if (!$this->print): ?>
 <?php TemplateUtility::printHeaderBlock(); ?>
 <?php TemplateUtility::printTabs($this->active); ?>
@@ -84,7 +84,7 @@
             <?php if (isset($this->resumeText) && !empty($this->resumeText)): ?>
             <br /><br />
             <span style="font-size: 14px;">
-            <b><?php echo $this->cData['firstName'] . ' ' . $this->cData['lastName']; ?>'s Resume:</b>
+            <b><?php echo $this->cData['lastName'] . ' ' . $this->cData['firstName']; ?>'s Resume:</b>
             <br />
             <div>
             <?php echo $this->resumeText; ?>

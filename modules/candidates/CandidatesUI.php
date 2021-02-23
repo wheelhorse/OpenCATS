@@ -670,7 +670,7 @@ class CandidatesUI extends UserInterface
 
         /* Add an MRU entry. */
         $_SESSION['CATS']->getMRU()->addEntry(
-            DATA_ITEM_CANDIDATE, $candidateID, $data['firstName'] . ' ' . $data['lastName']
+            DATA_ITEM_CANDIDATE, $candidateID, $data['lastName'] . ' ' . $data['firstName']
         );
 
         /* Is the user an admin - can user see history? */
@@ -1092,7 +1092,7 @@ class CandidatesUI extends UserInterface
 
         /* Add an MRU entry. */
         $_SESSION['CATS']->getMRU()->addEntry(
-            DATA_ITEM_CANDIDATE, $candidateID, $data['firstName'] . ' ' . $data['lastName']
+            DATA_ITEM_CANDIDATE, $candidateID, $data['lastName'] . ' ' . $data['firstName']
         );
 
         /* Get extra fields. */
@@ -1285,7 +1285,7 @@ class CandidatesUI extends UserInterface
                 $replacementStrings = array(
                     $ownerDetails['fullName'],
                     $candidateDetails['firstName'],
-                    $candidateDetails['firstName'] . ' ' . $candidateDetails['lastName'],
+                    $candidateDetails['lastName'] . ' ' . $candidateDetails['firstName'],
                     '<a href="http://' . $_SERVER['HTTP_HOST'] . substr($_SERVER['REQUEST_URI'], 0, strpos($_SERVER['REQUEST_URI'], '?')) . '?m=candidates&amp;a=show&amp;candidateID=' . $candidateID . '">'.
                         'http://' . $_SERVER['HTTP_HOST'] . substr($_SERVER['REQUEST_URI'], 0, strpos($_SERVER['REQUEST_URI'], '?')) . '?m=candidates&amp;a=show&amp;candidateID=' . $candidateID . '</a>'
                 );
