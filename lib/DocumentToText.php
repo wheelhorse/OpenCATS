@@ -126,9 +126,12 @@ class DocumentToText
                     return false;
                 }
 
-                $nativeEncoding = 'ISO-8859-1';
+                /* $nativeEncoding = 'ISO-8859-1';
                 $command = '"'. ANTIWORD_PATH . '" -m ' . ANTIWORD_MAP . ' '
                     . $escapedFilename;
+                 */
+                $convertEncoding = false;
+                $command = 'LANG="en_US.UTF-8" "'. ANTIWORD_PATH . '" ' . $escapedFilename;
                 break;
 
             case DOCUMENT_TYPE_PDF:
