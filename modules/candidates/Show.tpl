@@ -3,9 +3,9 @@ include_once('./vendor/autoload.php');
 use OpenCATS\UI\CandidateQuickActionMenu;
 ?>
 <?php if ($this->isPopup): ?>
-    <?php TemplateUtility::printHeader('Candidate - '.$this->data['firstName'].' '.$this->data['lastName'], array( 'js/activity.js', 'js/sorttable.js', 'js/match.js', 'js/lib.js', 'js/pipeline.js', 'js/attachment.js', 'modules/candidates/quickAction-candidates.js')); ?>
+    <?php TemplateUtility::printHeader('Candidate - '.$this->data['lastName'].' '.$this->data['firstName'], array( 'js/activity.js', 'js/sorttable.js', 'js/match.js', 'js/lib.js', 'js/pipeline.js', 'js/attachment.js', 'modules/candidates/quickAction-candidates.js')); ?>
 <?php else: ?>
-    <?php TemplateUtility::printHeader('Candidate - '.$this->data['firstName'].' '.$this->data['lastName'], array( 'js/activity.js', 'js/sorttable.js', 'js/match.js', 'js/lib.js', 'js/pipeline.js', 'js/attachment.js', 'modules/candidates/quickAction-candidates.js')); ?>
+    <?php TemplateUtility::printHeader('Candidate - '.$this->data['lastName'].' '.$this->data['firstName'], array( 'js/activity.js', 'js/sorttable.js', 'js/match.js', 'js/lib.js', 'js/pipeline.js', 'js/attachment.js', 'modules/candidates/quickAction-candidates.js')); ?>
     
     <?php TemplateUtility::printHeaderBlock(); ?>
     <?php TemplateUtility::printTabs($this->active); ?>
@@ -47,9 +47,9 @@ use OpenCATS\UI\CandidateQuickActionMenu;
                                 <td class="vertical">Name:</td>
                                 <td class="data">
                                     <span style="font-weight: bold;" class="<?php echo($this->data['titleClass']); ?>">
-                                        <?php $this->_($this->data['firstName']); ?>
-                                        <?php $this->_($this->data['middleName']); ?>
                                         <?php $this->_($this->data['lastName']); ?>
+                                        <?php $this->_($this->data['middleName']); ?>
+                                        <?php $this->_($this->data['firstName']); ?>
                                         <?php if ($this->data['isActive'] != 1): ?>
                                             &nbsp;<span style="color:orange;">(INACTIVE)</span>
                                         <?php endif; ?>

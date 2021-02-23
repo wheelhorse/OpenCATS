@@ -62,8 +62,8 @@ class ImportantPipelineDashboard extends DataGrid
         $this->defaultSortDirection = 'DESC';
 
         $this->_defaultColumns = array(
-            array('name' => 'First Name', 'width' => 85),
-            array('name' => 'Last Name', 'width' => 75),
+            array('name' => 'Last Name', 'width' => 30),
+            array('name' => 'First Name', 'width' => 35),
             array('name' => 'Status', 'width' => 75),
             array('name' => 'Position', 'width' => 275),
             array('name' => 'Company', 'width' => 210),
