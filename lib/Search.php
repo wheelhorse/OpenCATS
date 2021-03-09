@@ -598,6 +598,7 @@ class SearchCandidates
             '',
             $wildCardString
         );
+        $wildCardString = '%' . $wildCardString . '%';
         $wildCardString = $this->_db->makeQueryString($wildCardString);
 
         $sql = sprintf(
