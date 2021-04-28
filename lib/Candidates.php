@@ -36,6 +36,7 @@ include_once(LEGACY_ROOT . '/lib/History.php');
 include_once(LEGACY_ROOT . '/lib/SavedLists.php');
 include_once(LEGACY_ROOT . '/lib/ExtraFields.php');
 include_once(LEGACY_ROOT . '/lib/DataGrid.php');
+include_once(LEGACY_ROOT . '/lib/StringUtility.php');
 
 
 /**
@@ -720,6 +721,7 @@ class Candidates
     }
     public function getIDByPhone($phone)
     {
+        $phone = StringUtility::extractPhoneNumber($phone);
         $sql = sprintf(
             "SELECT
                 candidate.candidate_id AS candidateID
