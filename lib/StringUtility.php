@@ -146,7 +146,7 @@ class StringUtility
             }
 
             $formattedPhoneNumber = sprintf(
-                "%s-%s-%s",
+                "%s%s%s",
                 $matches['cnNumber1'],
                 $matches['cnNumber2'],
                 $matches['cnNumber3']
