@@ -1010,7 +1010,7 @@ class CandidatesUI extends UserInterface
                     if (isset($res['first_name'])) $fields['firstName'] = $res['first_name']; else $fields['firstName'] = '';
                     if (isset($res['last_name'])) $fields['lastName'] = $res['last_name']; else $fields['lastName'] = '';
                     $fields['middleName'] = '';
-                    if (isset($res['email_address'])) $fields['email1'] = $res['email_address']; else $fields['email1'] = '';
+                    if (isset($res['email_address'])) $fields['email1'] = $res['email_address']; else $fields['email1'] = 'testemail';
                     $fields['email2'] = '';
                     if (isset($res['us_address'])) $fields['address'] = $res['us_address']; else $fields['address'] = '';
                     if (isset($res['city'])) $fields['city'] = $res['city']; else $fields['city'] = '';

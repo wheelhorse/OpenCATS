@@ -61,17 +61,17 @@
                         <tr>
                             <th nowrap>&nbsp;</th>
                             <th align="left" nowrap="nowrap">
-                                <?php $this->pager->printSortLink('firstName', 'First Name'); ?>
-                            </th>
-                            <th align="left" nowrap="nowrap">
-                                <?php $this->pager->printSortLink('lastName', 'Last Name'); ?>
+                                <?php $this->pager->printSortLink('lastName', 'Name'); ?>
                             </th>
                             <th align="left" nowrap="nowrap">Resume</th>
+                            <th align="left" nowrap="nowrap">
+                                <?php $this->pager->printSortLink('currentEmployer', 'Employer'); ?>
+                            </th>
                             <th align="left" nowrap="nowrap">
                                 <?php $this->pager->printSortLink('city', 'City'); ?>
                             </th>
                             <th align="left" nowrap="nowrap">
-                                <?php $this->pager->printSortLink('state', 'State'); ?>
+                                <?php $this->pager->printSortLink('phoneCell', 'Cell Phone'); ?>
                             </th>
                             <th align="left" nowrap="nowrap">
                                 <?php $this->pager->printSortLink('dateCreatedSort', 'Created'); ?>
@@ -97,12 +97,7 @@
                                     </td>
                                     <td valign="top">
                                         <a href="<?php echo(CATSUtility::getIndexName()); ?>?m=candidates&amp;a=show&amp;candidateID=<?php $this->_($data['candidateID']); ?>">
-                                            <?php $this->_($data['firstName']); ?>
-                                        </a>
-                                    </td>
-                                    <td valign="top">
-                                        <a href="<?php echo(CATSUtility::getIndexName()); ?>?m=candidates&amp;a=show&amp;candidateID=<?php $this->_($data['candidateID']); ?>">
-                                            <?php $this->_($data['lastName']); ?>
+                                            <?php $this->_($data['lastName']) . $this->_($data['firstName']); ?>
                                         </a>
                                     </td>
                                 <?php else: ?>
@@ -116,14 +111,16 @@
                                         &nbsp;Bulk Resume
                                     </td>
                                 <?php endif; ?>
+
                                 <td valign="top">
                                     <a href="#" onclick="window.open('<?php echo(CATSUtility::getIndexName()); ?>?m=candidates&amp;a=viewResume&amp;wildCardString=<?php $this->_(urlencode($this->wildCardString)); ?>&amp;attachmentID=<?php $this->_($data['attachmentID']); ?>', 'viewResume', 'scrollbars=1,width=700,height=600')">
                                         <img src="images/resume_preview_inline.gif" class="abstop" alt="(Preview)" border="0" width="15" height="15" />
                                     </a>&nbsp;
                                     <?php echo($data['excerpt']); ?>
                                 </td>
+                                <td valign="top"><?php $this->_($data['email1']); ?></td>
                                 <td valign="top"><?php $this->_($data['city']); ?></td>
-                                <td valign="top"><?php $this->_($data['state']); ?></td>
+                                <td valign="top"><?php $this->_($data['phoneCell']); ?></td>
                                 <td valign="top"><?php $this->_($data['dateCreated']); ?></td>
                                 <td valign="top"><?php $this->_($data['dateModified']); ?></td>
                                 <td valign="top" nowrap="nowrap"><?php $this->_($data['ownerAbbrName']); ?>&nbsp;</td>
@@ -151,17 +148,17 @@
                         <tr>
                             <th nowrap>&nbsp;</th>
                             <th align="left" nowrap="nowrap">
-                                <?php $this->pager->printSortLink('firstName', 'First Name'); ?>
-                            </th>
-                            <th align="left" nowrap="nowrap">
-                                <?php $this->pager->printSortLink('lastName', 'Last Name'); ?>
+                                <?php $this->pager->printSortLink('lastName', 'Name'); ?>
                             </th>
                             <th align="left" nowrap="nowrap">Key Skills</th>
+                            <th align="left" nowrap="nowrap">
+                                <?php $this->pager->printSortLink('currentEmployer', 'Employer'); ?>
+                            </th>
                             <th align="left" nowrap="nowrap">
                                 <?php $this->pager->printSortLink('city', 'City'); ?>
                             </th>
                             <th align="left" nowrap="nowrap">
-                                <?php $this->pager->printSortLink('state', 'State'); ?>
+                                <?php $this->pager->printSortLink('phoneCell', 'Cell Phone'); ?>
                             </th>
                             <th align="left" nowrap="nowrap">
                                 <?php $this->pager->printSortLink('dateCreated', 'Created'); ?>
@@ -184,12 +181,7 @@
                                 </td>
                                 <td>
                                     <a href="<?php echo(CATSUtility::getIndexName()); ?>?m=candidates&amp;a=show&amp;candidateID=<?php $this->_($data['candidateID']); ?>">
-                                        <?php $this->_($data['firstName']); ?>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="<?php echo(CATSUtility::getIndexName()); ?>?m=candidates&amp;a=show&amp;candidateID=<?php $this->_($data['candidateID']); ?>">
-                                        <?php $this->_($data['lastName']); ?>
+                                        <?php $this->_($data['lastName']) . $this->_($data['firstName']); ?>
                                     </a>
                                 </td>
                                 <td>
@@ -200,8 +192,9 @@
                                     <?php endif; ?>
                                     <?php $this->_($data['keySkills']); ?>&nbsp;
                                 </td>
+                                <td><?php $this->_($data['email1']); ?>&nbsp;</td>
                                 <td><?php $this->_($data['city']); ?>&nbsp;</td>
-                                <td><?php $this->_($data['state']); ?>&nbsp;</td>
+                                <td><?php $this->_($data['phoneCell']); ?>&nbsp;</td>
                                 <td><?php $this->_($data['dateCreated']); ?>&nbsp;</td>
                                 <td><?php $this->_($data['dateModified']); ?>&nbsp;</td>
                                 <td nowrap="nowrap"><?php $this->_($data['ownerAbbrName']); ?>&nbsp;</td>
