@@ -1079,7 +1079,7 @@ class Candidates
                             source = %s
                          AND
                             site_id = %s",
-                         $update[1],
+                         $this->_db->makeQueryString($update[0]),
                          $this->_db->makeQueryString($firstSource['name']),
                          $this->_siteID
                     );
